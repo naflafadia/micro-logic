@@ -6,7 +6,7 @@ const ButtonHome = ({to}) => {
     return (
         <div>
             <Link to={to}>
-            <button className=" bg-slate-300 p-3 font-light rounded-lg text-sm w-16 m-5 hover:bg-slate-400 hover:font-bold">Back</button>
+            <button className=" bg-slate-400 p-2 rounded-lg text-sm w-16 m-5 font-medium hover:bg-slate-300 shadow-sm shadow-slate-600">Home</button>
             </Link>
         </div>
     )
