@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ButtonHome from "../components/ButtonHome";
+import Navbar from "../components/Navbar";
 
 const SalaryCalculating = () => {
   const initialGajiPokok = "";
@@ -33,7 +35,9 @@ const SalaryCalculating = () => {
   };
     return (
     <>
-    <div className=" flex flex-col items-center mt-10">
+    <Navbar />
+    <ButtonHome to='/' />
+    <div className=" flex flex-col items-center">
     <div className=" bg-slate-400 w-80 rounded-md shadow-md shadow-slate-600">
         <div className=" p-5">
         <h1 className=" font-semibold text-xl text-center mb-6">Salary Calculating</h1>
@@ -75,7 +79,7 @@ const SalaryCalculating = () => {
     </div>
     </div>
     </>
-    );
+  );
 }
 
 export default SalaryCalculating;

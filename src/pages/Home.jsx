@@ -1,7 +1,10 @@
 import ButtonComponent from "../components/ButtonComponent";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
     return (
+    <div>
+        <Navbar />
         <div className=" flex flex-col items-center mt-8">
             <div className=" mb-5">
             <h1 className=" text-2xl font-bold">Challenge Games</h1>
@@ -15,6 +18,7 @@ const Home = () => {
             <ButtonComponent to='/tic-tac-toe' label='Tic Tac Toe' />
             <ButtonComponent to='/word-scramb' label='Word Scramb' />
         </div>
+    </div>
     )
 }
 
