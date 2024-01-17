@@ -4,28 +4,28 @@ import ButtonHome from "../components/ButtonHome";
 import Navbar from "../components/Navbar";
 
 const WordScramb = () => {
-    const fruitsData = [
-      { scrambled: "lpepa", correct: "apple" },
-      { scrambled: "onagaer", correct: "orange" },
-      { scrambled: "anbnaa", correct: "banana" },
-      { scrambled: "pcleah", correct: "peach" },
-      { scrambled: "wepmreonl", correct: "watermelon" },
-      { scrambled: "yrrberlub", correct: "blueberry" },
-      { scrambled: "rryehc", correct: "cherry" },
-      { scrambled: "amngo", correct: "mango" },
-      { scrambled: "olmneon", correct: "lemon" },
-      { scrambled: "lime", correct: "lime" },
-      { scrambled: "blackberry", correct: "blackberry" },
-      { scrambled: "aveadoc", correct: "avocado" },
-      { scrambled: "gerfpurit", correct: "grapefruit" },
-      { scrambled: "rrbeay", correct: "berry" },
-      { scrambled: "ranosb", correct: "bonsar" },
-      { scrambled: "ignhppeaea", correct: "pineapple" },
-      { scrambled: "tsareeb", correct: "beetras" },
-      { scrambled: "rawpaay", correct: "papaya" },
-      { scrambled: "llocauetno", correct: "cantaloupe" },
-      { scrambled: "eerwiy", correct: "kiwi" },
-    ];
+  const fruitsData = [
+    { scrambled: "lpepa", correct: "apple" },
+    { scrambled: "onagaer", correct: "orange" },
+    { scrambled: "anbnaa", correct: "banana" },
+    { scrambled: "pcleah", correct: "peach" },
+    { scrambled: "wepmreonl", correct: "watermelon" },
+    { scrambled: "yrrberlub", correct: "blueberry" },
+    { scrambled: "rryehc", correct: "cherry" },
+    { scrambled: "amngo", correct: "mango" },
+    { scrambled: "olmneon", correct: "lemon" },
+    { scrambled: "lime", correct: "lime" },
+    { scrambled: "blackberry", correct: "blackberry" },
+    { scrambled: "aveadoc", correct: "avocado" },
+    { scrambled: "gerfpurit", correct: "grapefruit" },
+    { scrambled: "rrbeay", correct: "berry" },
+    { scrambled: "ranosb", correct: "bonsar" },
+    { scrambled: "ignhppeaea", correct: "pineapple" },
+    { scrambled: "tsareeb", correct: "beetras" },
+    { scrambled: "rawpaay", correct: "papaya" },
+    { scrambled: "llocauetno", correct: "cantaloupe" },
+    { scrambled: "eerwiy", correct: "kiwi" },
+  ];
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -36,6 +36,11 @@ const WordScramb = () => {
   const checkAnswer = () => {
     const correctAnswer = fruitsData[currentQuestion].correct.toLowerCase();
     const userEnteredAnswer = userAnswer.toLowerCase();
+
+    if (!userEnteredAnswer) {
+      alert("Please fill in the answer first!");
+      return;
+    }
 
     if (userEnteredAnswer === correctAnswer) {
       setIsCorrect(true);
@@ -72,7 +77,9 @@ const WordScramb = () => {
             <h1 className="font-semibold text-xl text-center mb-6">
               Word Scramble
             </h1>
-            <h3 className="text-sm">Score : <span className="font-bold">{score}</span></h3>
+            <h3 className="text-sm">
+              Score : <span className="font-bold">{score}</span>
+            </h3>
             <div className="mt-2 flex flex-col gap-2 items-center">
               <h2>Scrambled Words</h2>
               <h6 className="font-light text-xs text-slate-700">
@@ -106,7 +113,9 @@ const WordScramb = () => {
                           Next Question
                         </button>
                       ) : (
-                        <p className="text-blue-600 font-bold">All questions completed!</p>
+                        <p className="text-blue-600 font-bold">
+                          All questions completed!
+                        </p>
                       )}
                     </div>
                   ) : (
