@@ -13,7 +13,7 @@ const MobileLegend = () => {
     try {
       const response = await axios.get('https://api.dazelpro.com/mobile-legends/hero');
       setHeroes(response.data.hero);
-      setSearchResults(response.data.hero); // Isi searchResults dengan semua data hero
+      setSearchResults(response.data.hero);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -68,7 +68,7 @@ const MobileLegend = () => {
               <button
                 onClick={() => {
                   setSearchInput('');
-                  setSearchResults(heroes); // Reset searchResults ke semua data hero
+                  setSearchResults(heroes);
                 }}
                 className="bg-slate-600 font-semibold text-white p-2 rounded-md hover:bg-slate-500 text-sm"
               >
